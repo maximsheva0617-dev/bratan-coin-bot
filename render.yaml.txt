@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: bratan-coin-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bratan_bot.py
+    healthCheckPath: /healthcheck
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
